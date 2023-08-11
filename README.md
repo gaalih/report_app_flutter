@@ -1,3 +1,11 @@
-# report_app_flutter
+# Report APP : Fluter
 
-A new Flutter project.
+learn to create mobile app using Flutter
+
+Product : Report
+Feature : 
+        - homepage : news
+        - form send report
+        - login admin
+        - admin : list report
+        - admin : process report
