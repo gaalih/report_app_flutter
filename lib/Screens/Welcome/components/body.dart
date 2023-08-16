@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:report_app_flutter/Screens/Login/login_screen.dart';
+import 'package:report_app_flutter/Screens/SignUp/signup_screen.dart';
 import 'package:report_app_flutter/Screens/Welcome/components/background.dart';
 import 'package:report_app_flutter/components/rounded_button.dart';
 import 'package:report_app_flutter/constants.dart';
@@ -63,7 +64,16 @@ class Body extends StatelessWidget {
             text: "Register",
             color: cPrimaryLightColor,
             textColor: cPrimaryColor,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const SignUpScreen();
+                  },
+                ),
+              );
+            },
           )
         ],
       ),

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:report_app_flutter/components/text_field_container.dart';
 import 'package:report_app_flutter/constants.dart';
 
-class RoundedInputField extends StatelessWidget {
+class RoundedSearchField extends StatelessWidget {
   final String placeholder;
   final IconData icon;
   final ValueChanged<String> onChanged;
-  const RoundedInputField({
+  const RoundedSearchField({
     super.key,
     this.placeholder = "Your Input",
     this.icon = Icons.person,

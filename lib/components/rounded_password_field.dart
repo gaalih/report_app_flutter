@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:report_app_flutter/components/text_field_container.dart';
 import 'package:report_app_flutter/constants.dart';
 
-class RoundedPasswordField extends StatelessWidget {
+class RoundedPasswordField extends StatefulWidget {
   final ValueChanged<String> onChanged;
   const RoundedPasswordField({
     super.key,
@@ -10,21 +10,36 @@ class RoundedPasswordField extends StatelessWidget {
   });
 
   @override
+  State<RoundedPasswordField> createState() => _RoundedPasswordFieldState();
+}
+
+class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
+  bool visible = false;
+
+  @override
   Widget build(BuildContext context) {
-    return const TextFieldContainer(
+    return TextFieldContainer(
       child: TextField(
-        obscureText: true,
+        obscureText: !visible,
         decoration: InputDecoration(
             hintText: "Your Password",
-            icon: Icon(
+            prefixIcon: const Icon(
               Icons.lock,
               color: cPrimaryColor,
             ),
-            suffixIcon: Icon(
-              Icons.visibility,
-              color: cPrimaryColor,
+            suffixIcon: IconButton(
+              onPressed: () {
+                setState(() {
+                  visible = !visible;
+                });
+              },
+              icon: Icon(
+                visible ? Icons.visibility_off : Icons.visibility,
+                color: cPrimaryColor,
+              ),
             ),
-            border: InputBorder.none),
+            border: InputBorder.none,
+            contentPadding: const EdgeInsets.symmetric(vertical: 20)),
       ),
     );
   }

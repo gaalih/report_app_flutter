@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:report_app_flutter/Screens/Home/home_screen.dart';
 import 'package:report_app_flutter/Screens/Login/components/background.dart';
 import 'package:report_app_flutter/Screens/SignUp/signup_screen.dart';
 import 'package:report_app_flutter/components/already_have_account_check.dart';
@@ -36,7 +37,14 @@ class Body extends StatelessWidget {
           ),
           RoundedButton(
             text: "Login",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
+                ),
+              );
+            },
           ),
           SizedBox(height: size.height * 0.03),
           AlreadyHaveAccountCheck(
