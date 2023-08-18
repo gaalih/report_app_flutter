@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:report_app_flutter/Data/user.dart';
-import 'package:report_app_flutter/Includes/background_default.dart';
-// import 'package:report_app_flutter/components/item_lists.dart';
+import 'package:report_app_flutter/Screens/Home/components/background.dart';
 import 'package:report_app_flutter/components/list_items.dart';
-// import 'package:report_app_flutter/components/rounded_button.dart';
+import 'package:report_app_flutter/components/rounded_button.dart';
 import 'package:report_app_flutter/components/rounded_search_field.dart';
-// import 'package:report_app_flutter/constants.dart';
+import 'package:report_app_flutter/constants.dart';
+import 'package:report_app_flutter/Data/user.dart';
 
 class Body extends StatelessWidget {
   // final Widget child;
@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; //total height and width  of screen
-    return BackgroundDefault(
+    return Background(
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -35,7 +35,7 @@ class Body extends StatelessWidget {
               icon: Icons.search,
               onChanged: (value) {},
             ),
-            ListItems(data: users),
+            LitsItems(data: users),
           ],
         ),
       ),
